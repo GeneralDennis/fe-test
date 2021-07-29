@@ -1,0 +1,76 @@
+.sort__items
+  display: flex
+  justify-content: flex-end
+  width: 100%
+
+.sort__item
+  display: flex
+  width: 100px
+  flex-direction: column
+  align-items: center
+
+
+  &:not(:last-child)
+    margin-right: 25px
+
+
+.sort__button
+  display: block
+  position: relative
+  width: 100%
+  height: 25px
+  padding: 0
+  border-radius: 10px
+  border: none
+
+  &::before
+    position: absolute
+    content: ''
+    height: 24px
+    width: 24px
+    border-radius: 50%
+    top: 50%
+    left: 50%
+    background: #c0bdeb
+    transform: translate(-50%, -50%)
+    transition: left .5s, right .5s
+
+  &::after
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  &--asc
+    background: #00ffaa
+
+    &::before
+      left: 10px
+
+    &::after
+      content: 'по возрастанию'
+      position: absolute
+      top: 50%
+      left: 50%
+      font-size: 10px
+      transform: translate(-50%, -50%)
+
+  &--desc
+    background: #00d9ff
+
+    &::before
+      left: calc(100% - 10px)
+
+    &::after
+      content: 'по убыванию'
+      position: absolute
+      top: 50%
+      left: 50%
+      font-size: 10px
+      transform: translate(-50%, -50%)
+
+.sort__label
+  margin-bottom: 10px
+  font-size: 14px
+  line-height: 1

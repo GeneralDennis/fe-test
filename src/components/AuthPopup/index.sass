@@ -1,0 +1,99 @@
+.auth-popup
+  position: fixed
+  top: -100%
+  left: 0
+  right: 0
+  bottom: unset
+  background: rgba(0, 0, 0, .6)
+  transition: top .3s, bottom .3s
+
+  &--open
+    top: 0
+    bottom: 0
+    .auth-popup__container
+      top: 50%
+
+.auth-popup__container
+  position: absolute
+  left: 50%
+  top: -100%
+  padding: 20px
+  transition: transform .3s, top .4s
+  transform: translate(-50%, -50%)
+  border-radius: 16px
+  background: rgba(#6A53F5, .5)
+
+.auth-form__form
+  display: flex
+  flex-direction: column
+  align-items: center
+  max-width: 640px
+  min-width: 320px
+  width: 100%
+
+  input
+    padding: 10px
+    width: 100%
+    border: none
+    border-radius: 6px
+    &:not(:last-child)
+      margin-bottom: 10px
+
+    &:focus
+      outline: none
+
+  button
+    width: 100%
+    padding: 10px
+    font-size: 14px
+    line-height: 1.2
+    color: #00BB6D
+    background: rgba(#00BB6D, .5)
+    border: none
+    border-radius: 6px
+    cursor: pointer
+    transition: color .3s, background .3s
+    &:hover
+      color: #CDCDCD
+      background: #00BB6D
+
+.auth-form__header
+  display: flex
+  width: 100%
+  align-items: center
+  justify-content: space-between
+
+  span
+    // display: block
+    // width: 20px
+    // height: 2px
+    // border-radius: 2px
+    // background: #00BB6D
+    transform: translateY(-2px)
+    cursor: pointer
+
+    &::before, &::after
+      content: ''
+      display: block
+      width: 20px
+      height: 2px
+      border-radius: 2px
+      background: #00BB6D
+      transform: rotate(45deg)  translate(-1px, 1px)
+      transition: background .3s
+
+    &::after
+      transform: rotate(-45deg) translateY(-3px)
+
+    &:hover
+      &::before, &::after
+        background: rgba(#00BB6D, .5)
+
+.auth-form__title
+  padding: 0
+  margin: 0 0 10px
+  font-size: 18px
+  line-height: 1.2
+  color: #00BB6D
+  font-weight: bold
+

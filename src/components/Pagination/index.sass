@@ -1,0 +1,42 @@
+.Pagination
+  display: inline-flex
+  li
+    list-style: none
+
+.Pagination__Link
+  display: inline-block
+  width: 40px
+  height: 40px
+  text-align: center
+  line-height: 40px
+  font-size: 18px
+  border-radius: 2px
+  cursor: pointer
+
+
+
+.Pagination__Item
+    & + &
+      margin-left: 5px
+
+    &.active
+      .Pagination__Link
+        background-color: rgba(#6A53F5, .1)
+        color: #3A3A3A
+
+.previous,
+.next
+  font-size: 16px
+  font-weight: bold
+  color: #3A3A3A
+  line-height: 40px
+  cursor: pointer
+
+  &.disabled
+    color: #eaeaea
+
+.previous
+  margin-right: 50px
+
+.next
+  margin-left: 50px
